@@ -7,6 +7,9 @@ import time
 def make_request():
     gh = Github()
 
+    data = gh.get_repo_content("aerovize", "README.md")
+    sha = data["sha"]
+
     month = datetime.now().month
     day = datetime.now().day
     year = datetime.now().year
@@ -24,13 +27,13 @@ def make_request():
 - :computer: [My Linkedin](https://www.linkedin.com/in/aweisend)"""
 
     resp = gh.update_file("aerovize", "updated README",
-                          content, "sha", "README.md")
+                          content, sha, "README.md")
     if resp:
         print(resp)
 
 
 def main():
-    schedule.every().day.at("24:00").do(make_request)
+    schedule.every().day.at("00:01").do(make_request)
 
     while True:
         schedule.run_pending()
