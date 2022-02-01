@@ -30,7 +30,7 @@ def make_request():
 
 
 def main():
-    schedule.every().day.at("10:30").do(make_request)
+    schedule.every().day.at("24:00").do(make_request)
 
     while True:
         schedule.run_pending()
