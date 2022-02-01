@@ -1,6 +1,6 @@
 # GitHub Profile Dater
 
-A python script that updates the date on my profiles README.md.
+A python script that updates the date on my profiles README.md daily.
 
 ## Features:
 
