@@ -2,3 +2,4 @@
 venv/
 sha.txt
 __pycache__
+log.txt
